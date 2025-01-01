@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
-  const [error, setError] = useState(null); // To handle any errors
+  const [error, setError] = useState(null); 
 
   useEffect(() => {
     const getPost = async () => {
       try {
         const response = await axios.get("http://localhost:3001/posts");
         if (response.data && response.data.posts) {
-          setPosts(response.data.posts); // Set the posts data
+          setPosts(response.data.posts);
         } else {
-          setPosts([]); // Fallback if posts data is not in expected shape
+          setPosts([]); 
         }
       } catch (err) {
         console.error("Error fetching posts:", err);
